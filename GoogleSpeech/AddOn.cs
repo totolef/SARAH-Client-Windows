@@ -30,7 +30,7 @@ namespace net.encausse.sarah.google {
       Host.Log(this, "DYN process speech2text: ...");
       String language = ConfigManager.GetInstance().Find("bot.language", "fr-FR");
       String speech2text = ProcessAudioStream(stream, language, text);
-      if (String.IsNullOrEmpty(speech2text)) { } else {
+      if (!String.IsNullOrEmpty(speech2text)) {
         options.Add("dictation", speech2text);
       }
     }
